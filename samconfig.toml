@@ -1,0 +1,25 @@
+# More information about the configuration file can be found here:
+# https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-config.html
+version = 0.1
+
+# Continuous Integration
+
+[ci.validate.parameters]
+lint = true
+template_file = ".aws/templates/continuous-integration.yml"
+
+[ci.package.parameters]
+s3_bucket = "sam-dev-repository"
+s3_prefix = "cicd"
+region = "eu-west-3"
+template_file = ".aws/templates/continuous-integration.yml"
+output_template_file = ".aws/templates/ci-out.yml"
+
+[ci.deploy.parameters]
+s3_bucket = "sam-dev-repository"
+s3_prefix = "cicd"
+region = "eu-west-3"
+stack_name = "elb-tuto-continuous-integration"
+confirm_changeset = false
+capabilities = "CAPABILITY_IAM CAPABILITY_NAMED_IAM"
+template_file = ".aws/templates/ci-out.yml"

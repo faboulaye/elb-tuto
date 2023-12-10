@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "todo"
+version = "0.1.0"
+description = "Todo API"
+authors = ["firdaws Aboulaye <aboufred@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.104.0"
+boto3 = "^1.28.73"
+uvicorn = "^0.23.2"
+
+[tool.poetry.group.dev.dependencies]
+moto = "^4.2.7"
+
+[tool.poetry.group.test.dependencies]
+pytest = "^7.4.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
